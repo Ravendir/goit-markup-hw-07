@@ -55,6 +55,17 @@ footer {
   width: 1200px;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 .button {
   background-color: var(--secondary-background-color);
   color: var(--primary-text-color);
@@ -311,6 +322,36 @@ footer {
 .modal-svg {
   width: 11px;
   height: 11px;
+}
+
+/* .signup-term {
+  align-items: center;
+} */
+
+.sighup-term {
+  display: flex;
+  align-items: center;
+}
+
+.signup-form-term-desc {
+  position: relative;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+.signup-form-term-desc::before {
+  content: '';
+  top: 0;
+  left: -20px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--primary-text-color);
+}
+
+.signup-form-term:checked + .signup-form-term-desc::before {
+  border-color: var(--accent-text-color);
+  background: var(--accent-text-color) url(../images/Vector.svg) no-repeat
+    center center;
 }
 
 /* ========================ADVANTAGE====================== */
@@ -775,10 +816,6 @@ li.team > p {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--primary-white-color);
   background-color: var(--accent-text-color);
-}
-
-.button.title {
-  display: none;
 }
 
 .project-name {
